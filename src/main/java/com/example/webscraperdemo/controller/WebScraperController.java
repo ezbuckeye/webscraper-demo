@@ -24,8 +24,7 @@ public class WebScraperController {
     }
 
     @GetMapping("/scrape")
-    public @ResponseBody ExternalEvent getExternalEvents() {
-        wss.getEvent();
-        return new ExternalEvent("1", "2", "3");
+    public @ResponseBody List<ExternalEvent> getExternalEvents() {
+        return wss.getEvents();
     }
 }
