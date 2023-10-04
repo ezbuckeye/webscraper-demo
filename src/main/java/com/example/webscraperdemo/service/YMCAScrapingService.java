@@ -26,7 +26,7 @@ public class YMCAScrapingService implements ScrapingServiceInterface{
             return event;
         }
         Element eventInfo = doc.selectFirst("div.project-info");
-        event.setDescription(eventInfo.select("#project-description").text());
+        event.setDescription(eventInfo.selectFirst("#description").text());
 
         return event;
     }
